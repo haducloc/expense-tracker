@@ -1,0 +1,196 @@
+body {
+	padding-top: 3.5rem;
+}
+
+a {
+	color: #0000B3;
+}
+
+.btn-link {
+	color: #0000B3 !important;
+}
+
+.nav-link {
+	white-space: nowrap !important;
+}
+
+span.label-required {
+	color: red;
+}
+
+input.field-error, select.field-error, textarea.field-error {
+	border: 1px solid #dc3545;
+}
+
+label.field-label {
+	font-weight: 400;
+}
+
+.lower {
+	text-transform: lowercase !important;
+}
+
+.font-normal {
+	font-style: normal !important;
+}
+
+select.no-appearance {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+}
+
+.ver-bar {
+	color: #E0E0E0;
+	display: inline-block;
+}
+
+.messages-info {
+	background: #d5edf8;
+	color: #205791;
+}
+
+.messages-notice {
+	background: #fff6bf;
+	color: #514721;
+}
+
+.messages-warn {
+	background: #fff3cd;
+	color: #856404;
+}
+
+.messages-error {
+	background: #fbe3e4;
+	color: #8a1f11;
+}
+
+.field-error-msg {
+	font-size: 0.875rem;
+	color: #dc3545;
+}
+
+.font-sl0 {
+	font-size: 1.0rem !important;
+}
+
+.font-sl1 {
+	font-size: 1.125rem !important;
+}
+
+.font-sl2 {
+	font-size: 1.25rem !important;
+}
+
+.font-sl3 {
+	font-size: 1.375rem !important;
+}
+
+.font-sl4 {
+	font-size: 1.5rem !important;
+}
+
+.font-sl5 {
+	font-size: 1.625rem !important;
+}
+
+.font-sl6 {
+	font-size: 1.75rem !important;
+}
+
+.font-sl7 {
+	font-size: 1.875rem !important;
+}
+
+.font-sl8 {
+	font-size: 2.0rem !important;
+}
+
+.font-sl9 {
+	font-size: 2.125rem !important;
+}
+
+.font-sl10 {
+	font-size: 2.25rem !important;
+}
+
+.font-sl11 {
+	font-size: 2.375rem !important;
+}
+
+.font-sl12 {
+	font-size: 2.5rem !important;
+}
+
+.font-sm1 {
+	font-size: 0.875rem !important;
+}
+
+.font-sm2 {
+	font-size: 0.75rem !important;
+}
+
+.font-w1 {
+	font-weight: 100 !important;
+}
+
+.font-w2 {
+	font-weight: 200 !important;
+}
+
+.font-w3 {
+	font-weight: 300 !important;
+}
+
+.font-w4 {
+	font-weight: 400 !important;
+}
+
+.font-w5 {
+	font-weight: 500 !important;
+}
+
+.font-w6 {
+	font-weight: 600 !important;
+}
+
+.font-w7 {
+	font-weight: 700 !important;
+}
+
+a.tag-link {
+	font-style: italic;
+	display: inline-block;
+}
+
+div.messages-wrapper>ul:not(:first-child) {
+	margin-top: 1.0rem;
+}
+
+p.clickable {
+	cursor: pointer;
+}
+
+table.nowrap-head thead th {
+	white-space: nowrap !important;
+}
+
+.current-ym {
+	background-color: #f8f9fa !important;
+}
+
+.current-year {
+	background-color: #f8f9fa !important;
+}
+
+.table-md td, .table-md th {
+	padding: .5rem;
+}
+
+.problem-box {
+	background-color: #e9f4e9;
+}
+
+.problem-box:focus {
+    background-color: #e9f4e9;
+}

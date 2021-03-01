@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+
+	<persistence-unit name="ExpenseTracker"
+		transaction-type="JTA">
+
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<jta-data-source>java:app/jdbc/ExpenseTracker</jta-data-source>
+
+		<class>com.appslandia.plum.base.RemMeToken</class>
+		<class>com.appslandia.plum.base.VerifyToken</class>
+
+		<class>com.expensetracker.entities.Account</class>
+		<class>com.expensetracker.entities.Expense</class>
+		<class>com.expensetracker.entities.ExpenseCat</class>
+		<class>com.expensetracker.entities.RecurringExpense</class>
+		<class>com.expensetracker.entities.Vendors</class>
+
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+		<properties>
+			<property name="hibernate.dialect"
+				value="org.hibernate.dialect.MySQL8Dialect" />
+
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.connection.charSet" value="UTF-8" />
+
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="eclipselink.ddl-generation"
+				value="create-or-extend-tables" />
+
+			<property name="format_sql" value="true" />
+		</properties>
+
+	</persistence-unit>
+</persistence>

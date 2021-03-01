@@ -1,0 +1,15 @@
+# Generated
+
+generated/
+bin/
+classes/
+build/
+target/
+jsp/
+
+*.class
+
+# Package Files #
+*.war
+*.ear
+
