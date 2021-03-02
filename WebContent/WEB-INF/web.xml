@@ -8,7 +8,7 @@
 	<session-config>
 		<session-timeout>45</session-timeout>
 		<cookie-config>
-			<name>exptracker.sid</name>
+			<name>sid</name>
 			<http-only>true</http-only>
 		</cookie-config>
 	</session-config>
