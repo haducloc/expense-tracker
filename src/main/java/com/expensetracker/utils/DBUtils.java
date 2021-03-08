@@ -8,7 +8,7 @@ package com.expensetracker.utils;
 public class DBUtils {
 
 	public static final String DB_NAME = "ExpenseTracker";
-	public static final String DS_NAME = "java:app/jdbc/ExpenseTracker";
+	public static final String DS_NAME = "java:/jdbc/ExpenseTracker";
 
 	public static final String PU_NAME = "ExpenseTracker";
 }

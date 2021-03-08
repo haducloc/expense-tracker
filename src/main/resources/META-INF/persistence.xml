@@ -8,7 +8,7 @@
 		transaction-type="JTA">
 
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-		<jta-data-source>java:app/jdbc/ExpenseTracker</jta-data-source>
+		<jta-data-source>java:/jdbc/ExpenseTracker</jta-data-source>
 
 		<class>com.appslandia.plum.base.RemMeToken</class>
 		<class>com.appslandia.plum.base.VerifyToken</class>
