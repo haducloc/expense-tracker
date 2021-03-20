@@ -16,6 +16,7 @@ import com.appslandia.plum.results.JspResult;
 import com.appslandia.plum.results.RedirectResult;
 import com.expensetracker.entities.Vendors;
 import com.expensetracker.services.VendorService;
+import com.expensetracker.utils.AccountUtils;
 
 /**
  *
@@ -64,6 +65,9 @@ public class ManageVendorController {
 		}
 
 		try {
+			// Demo user has read permissions only
+			AccountUtils.assertNotDemoUser(request);
+
 			// Save
 			this.vendorService.save(model);
 			request.getMessages().addNotice(request.res("record.saved_successfully", request.res("vendors")));

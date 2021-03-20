@@ -1,6 +1,8 @@
 package com.expensetracker.utils;
 
 import com.appslandia.common.crypto.PasswordDigester;
+import com.appslandia.plum.base.ForbiddenException;
+import com.appslandia.plum.base.RequestAccessor;
 
 /**
  *
@@ -23,5 +25,13 @@ public class AccountUtils {
 
 	static PasswordDigester getPasswordDigester() {
 		return new PasswordDigester();
+	}
+
+	public static void assertNotDemoUser(RequestAccessor request) {
+		request.assertNotNull(request.getRemoteUser());
+
+		if ("demo@gmail.com".equals(request.getRemoteUser())) {
+			throw new ForbiddenException(request.res("errors.forbidded_demo_user"));
+		}
 	}
 }

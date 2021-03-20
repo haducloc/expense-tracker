@@ -19,6 +19,7 @@ import com.expensetracker.entities.RecurringExpense;
 import com.expensetracker.services.ExpenseCatService;
 import com.expensetracker.services.RecurringExpenseService;
 import com.expensetracker.services.VendorService;
+import com.expensetracker.utils.AccountUtils;
 
 /**
  *
@@ -93,6 +94,9 @@ public class ManageRecurringExpenseController {
 		}
 
 		try {
+			// Demo user has read permissions only
+			AccountUtils.assertNotDemoUser(request);
+
 			// Remove?
 			if (request.isRemoveAction()) {
 				request.assertNotNull(model.getRecurringExpenseId());

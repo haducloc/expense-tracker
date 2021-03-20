@@ -40,6 +40,7 @@ import com.expensetracker.models.ExpenseIndexModel;
 import com.expensetracker.services.ExpenseCatService;
 import com.expensetracker.services.ExpenseService;
 import com.expensetracker.services.VendorService;
+import com.expensetracker.utils.AccountUtils;
 
 /**
  *
@@ -188,6 +189,9 @@ public class ManageExpenseController {
 		}
 
 		try {
+			// Demo user has read permissions only
+			AccountUtils.assertNotDemoUser(request);
+
 			// Remove?
 			if (request.isRemoveAction()) {
 				request.assertNotNull(model.getExpenseId());

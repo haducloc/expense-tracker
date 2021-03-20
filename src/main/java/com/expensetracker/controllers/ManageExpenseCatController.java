@@ -17,6 +17,7 @@ import com.appslandia.plum.results.JspResult;
 import com.appslandia.plum.results.RedirectResult;
 import com.expensetracker.entities.ExpenseCat;
 import com.expensetracker.services.ExpenseCatService;
+import com.expensetracker.utils.AccountUtils;
 
 /**
  *
@@ -78,6 +79,9 @@ public class ManageExpenseCatController {
 		}
 
 		try {
+			// Demo user has read permissions only
+			AccountUtils.assertNotDemoUser(request);
+
 			// Remove?
 			if (request.isRemoveAction()) {
 				request.assertNotNull(model.getExpenseCatId());
