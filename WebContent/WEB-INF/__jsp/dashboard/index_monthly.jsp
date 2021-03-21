@@ -31,16 +31,16 @@
               <th scope="col"></th>
               <t:iterate items="${model.yearMonths}" var="ym">
                 <th scope="col" class="text-right${model.currentYm eq ym ? ' current-ym' : ''}">
-                  <t2:dollarAmt value="${model.yearMonthTotals.get(ym)}" clazz="font-weight-bold" />
+                  <t2:dollarAmt value="${model.yearMonthTotals.get(ym)}" clazz="font-weight-normal" />
                 </th>
               </t:iterate>
             </tr>
             <tr>
-              <th scope="col">Category</th>
-              <th scope="col" class="text-right">Max</th>
+              <th scope="col" class="bg-dark text-white">Category</th>
+              <th scope="col" class="text-right bg-dark text-white">Max</th>
 
               <t:iterate items="${model.yearMonths}" var="ym">
-                <th scope="col" class="text-right${model.currentYm eq ym ? ' current-ym' : ''}">${firstIndex ? ym : fx:fmtMonth(ym.monthValue)}</th>
+                <th scope="col" class="text-right bg-dark text-white">${firstIndex ? ym : fx:fmtMonth(ym.monthValue)}</th>
               </t:iterate>
             </tr>
           </thead>
@@ -66,7 +66,7 @@
               <td></td>
               <t:iterate items="${model.yearMonths}" var="ym">
                 <td class="text-right${model.currentYm eq ym ? ' current-ym' : ''}">
-                  <t2:dollarAmt value="${model.yearMonthTotals.get(ym)}" clazz="font-weight-bold" />
+                  <t2:dollarAmt value="${model.yearMonthTotals.get(ym)}" clazz="font-weight-normal" />
                 </td>
               </t:iterate>
             </tr>

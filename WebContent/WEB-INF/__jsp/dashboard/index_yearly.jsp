@@ -31,16 +31,16 @@
               <th scope="col"></th>
               <t:iterate items="${model.years}" var="year">
                 <th class="text-right${model.currentYear eq year ? ' current-year' : ''}">
-                  <t2:dollarAmt value="${model.yearTotals.get(year)}" clazz="font-weight-bold" />
+                  <t2:dollarAmt value="${model.yearTotals.get(year)}" clazz="font-weight-normal" />
                 </th>
               </t:iterate>
             </tr>
             <tr>
-              <th scope="col">Category</th>
-              <th scope="col" class="text-right">Max</th>
+              <th scope="col" class="bg-dark text-white">Category</th>
+              <th scope="col" class="text-right bg-dark text-white">Max</th>
 
               <t:iterate items="${model.years}" var="year">
-                <th scope="col" class="text-right${model.currentYear eq year ? ' current-year' : ''}">${year}</th>
+                <th scope="col" class="text-right bg-dark text-white">${year}</th>
               </t:iterate>
             </tr>
           </thead>
@@ -66,7 +66,7 @@
               <td></td>
               <t:iterate items="${model.years}" var="year">
                 <td class="text-right${model.currentYear eq year ? ' current-year' : ''}">
-                  <t2:dollarAmt value="${model.yearTotals.get(year)}" clazz="font-weight-bold" />
+                  <t2:dollarAmt value="${model.yearTotals.get(year)}" clazz="font-weight-normal" />
                 </td>
               </t:iterate>
             </tr>
