@@ -2,7 +2,7 @@
 
 <!-- @variables
   page.title=${ctx.esc('account_changepwd.page_title')}
-  __layout=layout
+  __layout=layout_admin
  -->
 
 <div class="container mb-4">
