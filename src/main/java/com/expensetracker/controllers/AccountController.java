@@ -77,7 +77,9 @@ public class AccountController {
 			request.getModelState().remove("email", "rememberMe");
 		}
 
-		if (AccountUtils.isDemoUser(model.getEmail())) {
+		// Demo user used if no credentials provided
+		if (model.getEmail() == null && model.getPassword() == null) {
+			model.setEmail("demo@gmail.com");
 			model.setPassword("Demo@111");
 			request.getModelState().clearErrors();
 		}
