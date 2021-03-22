@@ -27,10 +27,14 @@ public class AccountUtils {
 		return new PasswordDigester();
 	}
 
+	public static boolean isDemoUser(String username) {
+		return "demo@gmail.com".equals(username);
+	}
+
 	public static void assertNotDemoUser(RequestAccessor request) {
 		request.assertNotNull(request.getRemoteUser());
 
-		if ("demo@gmail.com".equals(request.getRemoteUser())) {
+		if (isDemoUser(request.getRemoteUser())) {
 			throw new ForbiddenException(request.res("errors.forbidded_demo_user"));
 		}
 	}

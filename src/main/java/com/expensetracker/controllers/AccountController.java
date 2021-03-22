@@ -74,6 +74,11 @@ public class AccountController {
 			request.getModelState().remove("email", "rememberMe");
 		}
 
+		if (AccountUtils.isDemoUser(model.getEmail())) {
+			model.setPassword("Demo@111");
+			request.getModelState().clearErrors();
+		}
+
 		if (!request.getModelState().isValid()) {
 			request.storeModel(model);
 			return JspResult.DEFAULT;

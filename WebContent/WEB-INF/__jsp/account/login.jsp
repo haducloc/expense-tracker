@@ -15,12 +15,12 @@
 
           <div class="form-group">
             <t:fieldLabel field="email" labelKey="emailLoginModel.email" required="true" />
-            <t:textBox type="email" path="model.email" enterBtn="btnLogin" autocomplete="email" clazz="form-control" />
+            <t:textBox type="email" path="model.email" enterBtn="btnLogin" autocomplete="email" placeholder="demo@gmail.com" clazz="form-control"  />
           </div>
 
           <div class="form-group">
             <t:fieldLabel field="password" labelKey="emailLoginModel.password" required="true" />
-            <t:textBox type="password" path="model.password" enterBtn="btnLogin" clazz="form-control" />
+            <t:textBox type="password" path="model.password" enterBtn="btnLogin" placeholder="Demo@111" clazz="form-control" />
           </div>
 
           <div class="form-group">
