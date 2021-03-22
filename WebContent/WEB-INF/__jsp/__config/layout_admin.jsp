@@ -74,6 +74,8 @@
                   <t:displayName />
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="authDrp">
+                  <t:actionLink clazz="dropdown-item" action="changepwd" controller="account">${ctx.escCt('label.changepwd')}</t:actionLink>
+                  <div class="dropdown-divider"></div>
                   <t:actionLink clazz="dropdown-item" action="logout" controller="account">${ctx.escCt('label.logout')}</t:actionLink>
                 </div>
               </li>

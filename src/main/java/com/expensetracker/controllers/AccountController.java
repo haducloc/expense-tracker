@@ -11,14 +11,17 @@ import com.appslandia.plum.base.ActionResult;
 import com.appslandia.plum.base.AuthContext;
 import com.appslandia.plum.base.AuthFailureResult;
 import com.appslandia.plum.base.AuthParameters;
+import com.appslandia.plum.base.Authorize;
 import com.appslandia.plum.base.Controller;
 import com.appslandia.plum.base.ExceptionHandler;
 import com.appslandia.plum.base.FormLogin;
 import com.appslandia.plum.base.HttpGet;
 import com.appslandia.plum.base.HttpGetPost;
+import com.appslandia.plum.base.Model;
 import com.appslandia.plum.base.ModelBinder;
 import com.appslandia.plum.base.RequestAccessor;
 import com.appslandia.plum.models.EmailLoginModel;
+import com.appslandia.plum.models.NewPasswordModel;
 import com.appslandia.plum.results.JspResult;
 import com.appslandia.plum.results.RedirectResult;
 import com.appslandia.plum.utils.ServletUtils;
@@ -142,5 +145,38 @@ public class AccountController {
 
 	static String getMsgKey(String failureCode) {
 		return "account." + failureCode;
+	}
+
+	@HttpGetPost
+	@Authorize
+	public ActionResult changepwd(RequestAccessor request, HttpServletResponse response, @Model NewPasswordModel model) throws Exception {
+		// GET
+		if (request.isGetOrHead()) {
+			request.getModelState().clearErrors();
+
+			request.storeModel(model);
+			return JspResult.DEFAULT;
+		}
+		// POST
+		if (!request.getModelState().isValid()) {
+			request.storeModel(model);
+			return JspResult.DEFAULT;
+		}
+		try {
+			// Demo user has read permissions only
+			AccountUtils.assertNotDemoUser(request);
+
+			accountService.changePassword(request.getUserId(), AccountUtils.hashPassword(model.getNewPassword()));
+
+			request.getMessages().addNotice(request.res("account_changepwd.password_changed_successfully"));
+			return new RedirectResult("changepwd");
+
+		} catch (Exception ex) {
+			logger.error(ex);
+			request.getMessages().addError(this.exceptionHandler.getProblem(request, ex).getTitle());
+
+			request.storeModel(model);
+			return JspResult.DEFAULT;
+		}
 	}
 }
