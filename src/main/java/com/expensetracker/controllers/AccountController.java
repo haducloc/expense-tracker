@@ -61,6 +61,7 @@ public class AccountController {
 
 		// GET
 		if (request.isGetOrHead()) {
+			model.setRememberMe(true);
 
 			request.storeModel(model);
 			return JspResult.DEFAULT;
