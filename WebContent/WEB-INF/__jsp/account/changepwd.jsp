@@ -23,7 +23,7 @@
             <t:fieldError field="newPassword" />
           </div>
 
-          <t:submitButton id="btnChangePwd" clazz="btn btn-primary px-4" labelKey="label.change"></t:submitButton>
+          <t:submitButton id="btnChangePwd" clazz="btn btn-primary px-4" labelKey="label.changepwd"></t:submitButton>
         </t:form>
       </div>
     </div>
