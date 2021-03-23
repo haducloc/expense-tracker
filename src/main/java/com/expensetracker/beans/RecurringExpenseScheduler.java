@@ -35,7 +35,7 @@ public class RecurringExpenseScheduler {
 	@Inject
 	protected AppLogger logger;
 
-	@Resource
+	@Inject
 	protected UserTransaction tx;
 
 	@Inject
